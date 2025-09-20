@@ -26,7 +26,7 @@ with open('Firewall_logs.txt', "r") as output, open("temporarly.txt", "w") as ne
     end_char = "' command"
     for line in output_text:
             start_pos = line.find(start_char) + len(start_char)
-            end_pos = line.find(end_char, start_pos)
+            end_pos = line.find(end_char)
             result = line[start_pos:end_pos]
             result = " ".join(result.split())
             new_document.write(result)
@@ -64,3 +64,4 @@ with open("temporarly.txt", "r") as output, open (file_name, "w") as output_1:
         output_1.write(i)
         output_1.write("\n")
 os.remove("temporarly.txt")
+
